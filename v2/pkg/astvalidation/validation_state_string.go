@@ -18,9 +18,8 @@ const _ValidationState_name = "UnknownStateValidInvalid"
 var _ValidationState_index = [...]uint8{0, 12, 17, 24}
 
 func (i ValidationState) String() string {
-	idx := int(i) - 0
-	if i < 0 || idx >= len(_ValidationState_index)-1 {
+	if i < 0 || i >= ValidationState(len(_ValidationState_index)-1) {
 		return "ValidationState(" + strconv.FormatInt(int64(i), 10) + ")"
 	}
-	return _ValidationState_name[_ValidationState_index[idx]:_ValidationState_index[idx+1]]
+	return _ValidationState_name[_ValidationState_index[i]:_ValidationState_index[i+1]]
 }
